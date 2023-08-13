@@ -240,21 +240,6 @@
                 }
             }
         },
-        "/api/v1/properties": {
-            "get": {
-                "tags": [
-                    "properties"
-                ],
-                "summary": "Properties",
-                "description": "get properties",
-                "operationId": "v1-properties-index",
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    }
-                }
-            }
-        },
         "/api/v1/property-types": {
             "get": {
                 "tags": [
@@ -263,6 +248,21 @@
                 "summary": "Property types",
                 "description": "get property types",
                 "operationId": "v1-property-types-index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/user-properties": {
+            "get": {
+                "tags": [
+                    "user properties"
+                ],
+                "summary": "User Properties",
+                "description": "get user properties",
+                "operationId": "v1-user-properties-index",
                 "responses": {
                     "200": {
                         "description": "successful operation"

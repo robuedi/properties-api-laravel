@@ -4,17 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Properties</title>
-        @unless(env('APP_ENV') === 'production')
-            @verbatim
-                <script type="module" src="http://localhost:5173/@vite/client"></script>
-                <script type="module" src="http://localhost:5173/@vite-plugin-checker-runtime-entry"></script>
-            @endverbatim
-        @endunless
+        <title>Properties API</title>
 
-        @vite('resources/js/main.ts')
     </head>
-    <body class="antialiased" >
-        <div id="app" ></div>
+    <body>
+        <h1 >Properties API</h1>
     </body>
 </html>
