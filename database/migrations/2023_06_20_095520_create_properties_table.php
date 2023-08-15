@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('bedrooms');
             $table->integer('bathrooms');
-            $table->boolean('is_public');
+            $table->boolean('is_public')->default('0');
             $table->timestamps();
 
             $table->foreign('owner_id')->references('id')->on('users');
