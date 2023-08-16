@@ -28,9 +28,7 @@ class CountriesControllerTest  extends TestCase
                 'data' => [
                     '*' => [
                         'id',
-                        'name',
-                        'created_at',
-                        'updated_at',
+                        'name'
                     ]
                 ]
             ]

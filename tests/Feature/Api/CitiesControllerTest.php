@@ -30,9 +30,7 @@ class CitiesControllerTest  extends TestCase
                     '*' => [
                         'id',
                         'name',
-                        'country_id',
-                        'created_at',
-                        'updated_at',
+                        'country_id'
                     ]
                 ]
             ]
