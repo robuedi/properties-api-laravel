@@ -146,7 +146,6 @@ class AuthController extends Controller
      */
     public function login(AuthLoginRequest $request) : JsonResponse
     {
-        jjj
         //do login
         return response()->json(['data' => [
             'token' => $this->auth_login_service->loginApi(email: $request->email, password: $request->password, device_name: $request->device_name)
