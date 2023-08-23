@@ -45,7 +45,6 @@ class UserPropertiesStoreRequest extends FormRequest
             'rent_listing.price_monthly'    => 'exclude_unless:listing_type_id,'.$rent_id.'|required_without:rent_listing.price_weekly|integer',
             'rent_listing.deposit'          => 'required_if:listing_type_id,'.$rent_id.'|integer',
             'rent_listing.minimum_tenancy'  => 'required_if:listing_type_id,'.$rent_id.'|integer',
-            'rent_listing.pets_allowed'     => 'required_if:listing_type_id,'.$rent_id.'|bool',
             'sell_listing.price'            => 'required_if:listing_type_id,'.$sell_id.'|integer',
         ];
     }

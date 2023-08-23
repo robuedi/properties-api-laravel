@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Property;
+use App\Policies\PropertyPolicy;
 use App\Services\AuthServices\AuthLoginService;
 use App\Services\AuthServices\AuthLoginServiceInterface;
 use App\Services\AuthServices\AuthLogoutService;
@@ -18,7 +20,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Property::class => PropertyPolicy::class,
     ];
 
     /**

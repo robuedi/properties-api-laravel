@@ -12,6 +12,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
+use App\Models\User;
 use Log;
 
 /**
@@ -38,11 +39,12 @@ class UserPropertiesController extends Controller
      *
      * Returns App/Model/User
      */
-    public function index() : JsonResponse
+    public function index(User $user) : JsonResponse
     {
         $public_fields = Property::getTableColumns();
 
         $user_properties = QueryBuilder::for(Property::class)
+                        ->where('owner_id', $user->id)
                         ->allowedFilters([
                             AllowedFilter::exact('bedrooms'),
                         ])
@@ -60,12 +62,12 @@ class UserPropertiesController extends Controller
                 ->setStatusCode(Response::HTTP_OK);
     }
 
-    public function store(UserPropertiesStoreRequest $request)
+    public function store(User $user, UserPropertiesStoreRequest $request)
     { 
         //save the property and it's relationships
         $this->property_repository
         ->setData($request->only(['name','property_type_id', 'listing_type_id', 'description', 'bedrooms', 'bathrooms', 'is_public']))
-        ->setUser(auth()->user())
+        ->setUser($user->id)
         ->setAddress(Address::create($request->input('address')))
         ->setRentListing($request->input('rent_listing'))
         ->setSellListing($request->input('sell_listing'))

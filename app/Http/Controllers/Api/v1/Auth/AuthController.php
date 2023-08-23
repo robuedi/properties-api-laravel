@@ -193,7 +193,7 @@ class AuthController extends Controller
     public function getUser(Request $request) : JsonResponse
     {
         return response()->json(['data' => [
-            'user' => array_intersect_key($request->user()->toArray(), array_flip(['name', 'email']))
+            'user' => array_intersect_key($request->user()->toArray(), array_flip(['id', 'name', 'email']))
         ]])->setStatusCode(Response::HTTP_OK);
     }
 

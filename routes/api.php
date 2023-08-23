@@ -35,7 +35,7 @@ Route::prefix('v1')->group(function(){
     });
     
     Route::middleware('auth:sanctum')->group(function(){
-        Route::apiResource('user-properties', UserPropertiesController::class);
+        Route::apiResource('user/{user}/properties', UserPropertiesController::class);
     });
 
     Route::get('countries', [CountriesController::class, 'index']);
